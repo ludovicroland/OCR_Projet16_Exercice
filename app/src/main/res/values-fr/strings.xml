@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Arista</string>
+    <string name="user_data">Données Utilisateur</string>
+    <string name="exercise">Exercices</string>
+    <string name="sleep">Sommeil</string>
+    <string name="start_time">Heure de Début:</string>
+    <string name="duration">Durée:</string>
+    <string name="category">Catégorie:</string>
+    <string name="intensity">Intensité:</string>
+    <string name="email">Email</string>
+    <string name="password">Mot de passe</string>
+    <string name="duration_in_minutes">Durée (en minutes)</string>
+    <string name="intensity_1_10">Intensité (1–10)</string>
+    <string name="intensity_should_be_between_1_and_10">L\'intensité doit être entre 1 et 10.</string>
+    <string name="invalid_input_please_enter_valid_numbers">Entrée invalide. Veuillez entrer des numéros valides.</string>
+    <string name="name">Nom</string>
+    <string name="add_new_exercise">Créer un nouvel exercice</string>
+    <string name="add">Ajouter</string>
+    <string name="cancel">Annuler</string>
+    <string name="fill_all_fields">Remplissez tous les champs</string>
+</resources>

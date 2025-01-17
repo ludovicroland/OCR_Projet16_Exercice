@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Arista</string>
+    <string name="user_data">User Data</string>
+    <string name="exercise">Exercises</string>
+    <string name="sleep">Sleep</string>
+    <string name="start_time">Start Time:</string>
+    <string name="duration">Duration:</string>
+    <string name="category">Category:</string>
+    <string name="intensity">Intensity:</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="duration_in_minutes">Duration (in minutes)</string>
+    <string name="intensity_1_10">Intensity (1–10)</string>
+    <string name="intensity_should_be_between_1_and_10">Intensity should be between 1 and 10.</string>
+    <string name="invalid_input_please_enter_valid_numbers">Invalid input. Please enter valid numbers.</string>
+    <string name="name">Name</string>
+    <string name="add_new_exercise">Add New Exercise</string>
+    <string name="add">Add</string>
+    <string name="cancel">Cancel</string>
+    <string name="fill_all_fields">Please fill all fields.</string>
+
+</resources>
