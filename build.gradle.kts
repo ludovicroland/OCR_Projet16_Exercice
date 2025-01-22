@@ -3,4 +3,5 @@ plugins {
     id("com.android.application") version "8.6.1" apply false
     id("org.jetbrains.kotlin.android") version "1.7.0" apply false
     id("com.google.dagger.hilt.android") version "2.42" apply false
+    id("org.sonarqube") version "6.0.1.5171"
 }
