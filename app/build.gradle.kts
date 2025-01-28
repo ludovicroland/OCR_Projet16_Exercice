@@ -8,10 +8,27 @@ plugins {
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
     id("jacoco")
+    id("org.sonarqube") version "5.1.0.4882"
 }
 
+/**
 
+sonar {
+    properties {
+        property("sonar.projectKey", "JumpingKeyCaps_OCR_Projet16_Exercice")
+        property("sonar.organization", "jumpingkeycaps")
+        property("sonar.host.url", "https://sonarcloud.io")
+        property("sonar.token","b12d279ff57ed81c228340e4a64fa05af00425f7")
+        property("sonar.sources", "src/main")
+        property("sonar.tests", "src/test")
+        property("sonar.java.binaries", "${project.buildDir}/intermediates/classes/debug")
 
+        property("sonar.coverage.jacoco.xmlReportPaths", "${buildDir}/reports/jacoco/jacocoTestReport/jacocoTestReport.xml")
+
+    }
+}
+
+*/
 //Signature app
 val keystorePropertiesFile = rootProject.file("keystore.properties")
 val keystoreProperties = Properties()
@@ -112,6 +129,9 @@ dependencies {
     //Tests
     testImplementation("junit:junit:4.13.2")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+    testImplementation("androidx.arch.core:core-testing:2.2.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
+    testImplementation("org.mockito:mockito-core:5.3.1")
 
     coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 
@@ -158,6 +178,8 @@ val jacocoTestReport by tasks.registering(JacocoReport::class) {
         "**/com/openclassrooms/arista/ui/user/*$*.class",
         "**/com/openclassrooms/arista/data/*$*.class",
         "**/com/openclassrooms/arista/domain/model/*$*.class",
+        "**/com/openclassrooms/arista/MainApplication.class",
+        "**/com/openclassrooms/arista/ui/MainActivity.class",
 
         )
 
