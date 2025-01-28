@@ -1,4 +1,4 @@
-package com.openclassrooms.arista
+package com.openclassrooms.arista.domainTest.usecaseTest
 
 import com.openclassrooms.arista.data.repository.ExerciseRepository
 import com.openclassrooms.arista.domain.model.Exercise
