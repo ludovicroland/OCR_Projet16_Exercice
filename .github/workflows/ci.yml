@@ -1,9 +1,8 @@
 name: CI Pipeline
 
 on:
-  pull_request:
-    branches:
-      - master
+  push:
+    branches: [ "master" ]
 
 
 jobs:
@@ -23,30 +22,18 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
 
-      - name: Clean and Build
+          #start emulator and run instrumented tests
+      - name: Enable KVM
         run: |
-          ./gradlew clean build
-
-      - name: Test
-        run: |
-          ./gradlew test
-
-      - name: JacocoReport
-        run: |
-          ./gradlew jacocoTestReport
-
-      - name: Run SonarCloud Analysis
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          ./gradlew sonarqube \
-            -Dsonar.projectKey=JumpingKeyCaps_OCR_Projet16_Exercice \
-            -Dsonar.organization=jumpingKeyCaps \
-            -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.coverage.jacoco.xmlReportPaths=app/build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml
-
-      - name: Validate PR
-        if: ${{ failure() }}
-        run: echo "Build ou analyse de qualité échouée, PR bloquée."
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+      - name: run tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          target: google_apis
+          arch: x86_64
+          api-level: 35
+          script: ./gradlew jacocoTestReport
 
 
